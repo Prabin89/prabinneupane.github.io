@@ -216,6 +216,6 @@ a:visited {
 }
 
 .footer {
-   position: absolute;
-   bottom: 0 !important;
+   /* position: absolute !important; */
+   /* bottom: 0 !important; */
 }

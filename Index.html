@@ -1,486 +1,786 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="description"
-        content="Zachary Jordan is working to create accessible and fun projects that try to address societal issues.">
-    <meta name="keywords" content="Neupane, Prabin, Portfolio">
-    <meta name="author" content="Prabin Neupane">
+    <meta
+      name="description"
+      content="Zachary Jordan is working to create accessible and fun projects that try to address societal issues."
+    />
+    <meta name="keywords" content="Neupane, Prabin, Portfolio" />
+    <meta name="author" content="Prabin Neupane" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico" />
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Prabin Neupane</title>
 
     <script defer src="https://plausible.io/js/script.js"></script>
+  </head>
 
-</head>
-
-<body id="top" onload="checkScrollPosition()" class="bg-gray-50">
-
-    <nav id="nav-on-scroll" style="background:rgb(53,211,153);background:rgba(53,211,153, 0.975);"
-        class="fixed hidden md:block lg:block duration-300 ease nav-top-hidden shadow left-0 w-full p-4 text-gray-900 z-40">
-        <div class="w-12/12 sm:w-11/12 md:w-12/12 lg:w-9/12 col-centered">
-            <a href="#top" class="kill-link-style xl:mr-6"><span
-                    class="inline-block animate__animated animate__fadeInDown rounded-md border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl rxl:text-3xl font-extrabold">
-                    PN
-                </span></a>
-            <a href="#projects"
-                class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold">Projects</a>
-            <a href="#extras"
-                class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold">Extras</a>
-            <a href="#media"
-                class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold">Media</a>
-            <span onclick="toggleContactMe('show')"
-                class="inline-block animate__animated animate__flipInX delay4 ml-6 mr-3 duration-300 float-right text-2xl xl:text-3xl cursor-pointer border-4 rounded-md px-4 p-2 border-gray-900 hover:bg-gray-900 hover:text-gray-50 font-extrabold">Contact
-                Me</span>
-        </div>
+  <body id="top" onload="checkScrollPosition()" class="bg-gray-50">
+    <nav
+      id="nav-on-scroll"
+      style="
+        background: rgb(53, 211, 153);
+        background: rgba(53, 211, 153, 0.975);
+      "
+      class="fixed hidden md:block lg:block duration-300 ease nav-top-hidden shadow left-0 w-full p-4 text-gray-900 z-40"
+    >
+      <div class="w-12/12 sm:w-11/12 md:w-12/12 lg:w-9/12 col-centered">
+        <a href="#top" class="kill-link-style xl:mr-6"
+          ><span
+            class="inline-block animate__animated animate__fadeInDown rounded-md border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl rxl:text-3xl font-extrabold"
+          >
+            PN
+          </span></a
+        >
+        <a
+          href="#projects"
+          class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold"
+          >Featured</a
+        >
+        <a
+          href="#extras"
+          class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold"
+          >Extras</a
+        >
+        <!-- <a
+          href="#media"
+          class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold"
+          >Media</a
+        > -->
+        <span
+          onclick="toggleContactMe('show')"
+          class="inline-block animate__animated animate__flipInX delay4 ml-6 mr-3 duration-300 float-right text-2xl xl:text-3xl cursor-pointer border-4 rounded-md px-4 p-2 border-gray-900 hover:bg-gray-900 hover:text-gray-50 font-extrabold"
+          >Contact Me</span
+        >
+      </div>
     </nav>
 
+    <div
+      id="contact-me-pane"
+      style="
+        left: 0;
+        right: 0;
+        overflow-y: auto !important;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 83%;
+      "
+      class="fixed duration-500 ease-in-out border-4 text-center border-green-400 border-b-0 p-6 md:p-12 ease contact-me-inactive rounded-t-xl bg-gray-900 text-gray-50 shadow-xl left-0 z-30 w-11/12 auto"
+    >
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12 inline-block"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.620"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+      </div>
+      <div class="text-2xl no-select md:text-3xl lg:text-5xl font-extrabold">
+        Contact Me
+      </div>
+      <div class="absolute right-6 top-4 md:right-16 md:top-12">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          onclick="toggleContactMe('hide')"
+          class="cursor-pointer h-14 w-14"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.420"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
 
-    <div id="contact-me-pane"
-        style="left:0;right:0;overflow-y:auto !important;margin-left: auto;margin-right: auto;max-height: 83%;"
-        class="fixed duration-500 ease-in-out border-4 text-center border-green-400 border-b-0 p-6 md:p-12 ease contact-me-inactive rounded-t-xl bg-gray-900 text-gray-50 shadow-xl left-0 z-30 w-11/12 auto">
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 inline-block" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.620"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <div class="mt-10 text-left">
+        <div class="text-gray-50 text-xl md:text-2xl font-extrabold">
+          Your Name
+        </div>
+        <form action="https://formspree.io/f/xvgpngna" method="POST">
+          <input
+            type="text"
+            required
+            name="name"
+            class="w-full mt-2 p-4 rounded-md font-bold text-gray-900 shadow text-xl md:text-2xl"
+            placeholder="Enter name"
+          />
+
+          <div class="text-gray-50 text-xl mt-4 md:text-2xl font-extrabold">
+            Your Email
+          </div>
+          <input
+            type="email"
+            required
+            name="email"
+            class="w-full mt-2 p-4 rounded-md shadow text-xl text-gray-900 font-bold md:text-2xl"
+            placeholder="Enter email"
+          />
+
+          <div class="text-gray-50 text-xl mt-4 md:text-2xl font-extrabold">
+            Your Message
+          </div>
+          <textarea
+            type="text"
+            required
+            name="message"
+            class="w-full mt-2 p-4 custom-textarea rounded-md shadow text-gray-900 font-bold text-xl md:text-2xl"
+            placeholder="Enter email"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="no-select px-4 p-2 text-xl mt-5 md:text-2xl lg:text-3xl border-4 border-gray-50 inline-block rounded-md cursor-pointer duration-200 hover:bg-gray-50 hover:text-gray-900 font-extrabold"
+          >
+            Send Message
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 -mt-1 ml-1 inline-block w-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                class="inline-block"
+                stroke-linejoin="round"
+                stroke-width="3.420"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
             </svg>
-        </div>
-        <div class="text-2xl no-select md:text-3xl lg:text-5xl font-extrabold">Contact Me</div>
-        <div class="absolute right-6 top-4 md:right-16 md:top-12">
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleContactMe('hide')" class="cursor-pointer h-14 w-14"
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.420"
-                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        </div>
-
-        <div class="mt-10 text-left">
-            <div class="text-gray-50 text-xl md:text-2xl font-extrabold">Your Name</div>
-            <form action="https://formspree.io/f/xvgpngna" method="POST">
-                <input type="text" required name="name"
-                    class="w-full mt-2 p-4 rounded-md font-bold text-gray-900 shadow text-xl md:text-2xl"
-                    placeholder="Enter name" />
-
-                <div class="text-gray-50 text-xl mt-4 md:text-2xl font-extrabold">Your Email</div>
-                <input type="email" required name="email"
-                    class="w-full mt-2 p-4 rounded-md shadow text-xl text-gray-900 font-bold md:text-2xl"
-                    placeholder="Enter email" />
-
-                <div class="text-gray-50 text-xl mt-4 md:text-2xl font-extrabold">Your Message</div>
-                <textarea type="text" required name="message"
-                    class="w-full mt-2 p-4 custom-textarea rounded-md shadow text-gray-900 font-bold text-xl md:text-2xl"
-                    placeholder="Enter email"></textarea>
-
-                <button type="submit"
-                    class="no-select px-4 p-2 text-xl mt-5 md:text-2xl lg:text-3xl border-4 border-gray-50 inline-block rounded-md cursor-pointer duration-200 hover:bg-gray-50 hover:text-gray-900 font-extrabold">Send
-                    Message <svg xmlns="http://www.w3.org/2000/svg" class="h-7 -mt-1 ml-1 inline-block w-7" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" class="inline-block" stroke-linejoin="round" stroke-width="3.420"
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg></button>
-            </form>
-        </div>
+          </button>
+        </form>
+      </div>
     </div>
-
 
     <nav class="block bg-white shadow md:hidden">
-        <div style="z-index: 999999999999999999999999999999999 !important;" class="fixed top-10 right-6">
-            <svg onclick="openMobileNav()" xmlns="http://www.w3.org/2000/svg"
-                class="duration-200 p-1.5 bg-gray-100 hover:bg-gray-200 h-12 w-12 rounded-full" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.620" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
-        </div>
+      <div
+        style="z-index: 999999999999999999999999999999999 !important"
+        class="fixed top-10 right-6"
+      >
+        <svg
+          onclick="openMobileNav()"
+          xmlns="http://www.w3.org/2000/svg"
+          class="duration-200 p-1.5 bg-gray-100 hover:bg-gray-200 h-12 w-12 rounded-full"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.620"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
+      </div>
     </nav>
 
-    <div id="mobile-nav" style="z-index: 999999999999999999999999999999999999999999999 !important;"
-        class="fixed block md:hidden duration-300 ease bg-gray-100 offscreen-nav offscreen-nav-hidden">
-        <div class="absolute top-10 right-4">
-            <svg onclick="closeMobileNav()" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.620"
-                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+    <div
+      id="mobile-nav"
+      style="z-index: 999999999999999999999999999999999999999999999 !important"
+      class="fixed block md:hidden duration-300 ease bg-gray-100 offscreen-nav offscreen-nav-hidden"
+    >
+      <div class="absolute top-10 right-4">
+        <svg
+          onclick="closeMobileNav()"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.620"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
+
+      <div class="relative w-12/12 text-center">
+        <span
+          onclick="scrollToSection('top')"
+          class="inline-block relative top-11 col-center rounded-md animate__animated xl:mr-6 animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl xl:text-3xl font-extrabold"
+        >
+          PN
+        </span>
+      </div>
+
+      <div class="mt-16 text-center col-centered">
+        <div class="text-4xl font-extrabold">
+          <span
+            onclick="scrollToSection('projects')"
+            class="underline--magical"
+          >
+            Projects
+          </span>
         </div>
 
-        <div class="relative w-12/12 text-center">
-            <span onclick="scrollToSection('top')"
-                class="inline-block relative top-11 col-center rounded-md animate__animated xl:mr-6 animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl xl:text-3xl font-extrabold">
-                PN
-            </span>
+        <div class="text-4xl mt-4 font-extrabold">
+          <span onclick="scrollToSection('extras')" class="underline--magical">
+            Extras
+          </span>
         </div>
 
-
-        <div class="mt-16 text-center col-centered">
-            <div class="text-4xl font-extrabold">
-                <span onclick="scrollToSection('projects')" class="underline--magical">
-                    Projects
-                </span>
-            </div>
-
-            <div class="text-4xl mt-4 font-extrabold">
-                <span onclick="scrollToSection('extras')" class="underline--magical">
-                    Extras
-                </span>
-            </div>
-
-            <div class="text-4xl mt-4 font-extrabold">
-                <span onclick="scrollToSection('media')" class="underline--magical">
-                    Media
-                </span>
-            </div>
-
-            <div class="text-3xl mt-8 relative font-extrabold">
-                <span onclick="openContact()" class="border-4 px-4 py-2 border-gray-900 rounded-md">
-                    Contact Me
-                </span>
-            </div>
+        <div class="text-4xl mt-4 font-extrabold">
+          <span onclick="scrollToSection('media')" class="underline--magical">
+            Media
+          </span>
         </div>
 
+        <div class="text-3xl mt-8 relative font-extrabold">
+          <span
+            onclick="openContact()"
+            class="border-4 px-4 py-2 border-gray-900 rounded-md"
+          >
+            Contact Me
+          </span>
+        </div>
+      </div>
     </div>
 
-    <div class="h-6 fixed z-50 md:relative block w-full z-50 bg-green-400">
-
-    </div>
-
+    <div
+      class="h-6 fixed z-50 md:relative block w-full z-50 bg-green-400"
+    ></div>
 
     <div class="xl:p-20 pt-10 xl:pb-22">
-        <div class="w-12/12 sm:w-11/12 md:w-12/12 lg:w-9/12 col-centered">
-            <span class="hidden md:block lg:block">
-                <a href="#top" class="kill-link-style">
-                    <span
-                        class="inline-block rounded-md animate__animated xl:mr-6 animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl xl:text-3xl font-extrabold">
-                        PN
-                    </span>
-                </a>
-
-                <a href="#projects"
-                    class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold">Projects</a>
-                <a href="#extras"
-                    class="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold">Extras</a>
-                <a href="#media"
-                    class="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold">Media</a>
-                <span onclick="toggleContactMe('show')"
-                    class="inline-block animate__animated animate__flipInX delay4 ml-6 mr-3 duration-300 float-right text-2xl xl:text-3xl cursor-pointer border-4 px-2 xl:px-4 p-2 border-gray-900 hover:bg-gray-900 hover:text-gray-50 rounded-md font-extrabold">Contact
-                    Me</span>
+      <div class="w-12/12 sm:w-11/12 md:w-12/12 lg:w-9/12 col-centered">
+        <span class="hidden md:block lg:block">
+          <a href="#top" class="kill-link-style">
+            <span
+              class="inline-block rounded-md animate__animated xl:mr-6 animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl xl:text-3xl font-extrabold"
+            >
+              PN
             </span>
+          </a>
 
-            <span class="block md:hidden lg:hidden">
-                <a href="#top" class="kill-link-style">
-                    <span
-                        class="inline-block hidden w-full text-center animate__animated animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl xl:text-3xl font-extrabold">
-                        PN
-                    </span>
+          <a
+            href="#projects"
+            class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold"
+            >Featured</a
+          >
+          <a
+            href="#extras"
+            class="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold"
+            >Extras</a
+          >
+          <!-- <a
+            href="#media"
+            class="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold"
+            >Media</a
+          > -->
+          <span
+            onclick="toggleContactMe('show')"
+            class="inline-block animate__animated animate__flipInX delay4 ml-6 mr-3 duration-300 float-right text-2xl xl:text-3xl cursor-pointer border-4 px-2 xl:px-4 p-2 border-gray-900 hover:bg-gray-900 hover:text-gray-50 rounded-md font-extrabold"
+            >Contact Me</span
+          >
+        </span>
 
-                </a>
+        <span class="block md:hidden lg:hidden">
+          <a href="#top" class="kill-link-style">
+            <span
+              class="inline-block hidden w-full text-center animate__animated animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 inline-block text-2xl xl:text-3xl font-extrabold"
+            >
+              PN
             </span>
-            <div class="mt-20">
-                <div class="w-full text-center">
-                    <img id="zach-image" style="border-radius:100%;" src="img/zach.png" alt="Photo of Zachary Jordan"
-                        class="cursor-pointer xl:mt-10 inline-block animate__animated animate__fadeIn delay2 border-gray-900 duration-300 ease hover:border-green-400 shadow-md border-8 h-80 w-80 md:w-96 md:h-96 inline-block" />
-                </div>
+          </a>
+        </span>
+        <div class="mt-20">
+          <div class="w-full text-center">
+            <img
+              id="zach-image"
+              style="border-radius: 100%"
+              src="img/zach.png"
+              alt="Photo of Zachary Jordan"
+              class="cursor-pointer xl:mt-10 inline-block animate__animated animate__fadeIn delay2 border-gray-900 duration-300 ease hover:border-green-400 shadow-md border-8 h-80 w-80 md:w-96 md:h-96 inline-block"
+            />
+          </div>
 
-                <div
-                    class="animate__animated animate__fadeInUp p-14 delay2 mt-10 xl:mt-14 text-3xl lg:text-5xl font-extrabold text-gray-900">
-                    Hey, I'm <span class="text-green-500">Prabin Neupane.</span> Here, you can check out what I'm
-                    working on. I try my best to create things with &#10084;
-                </div>
-                <!--
-        -->
-            </div>
-
-        </div>
-
-
+          <div
+            class="animate__animated animate__fadeInUp p-14 delay2 mt-10 xl:mt-14 text-3xl lg:text-5xl font-extrabold text-gray-900"
+          >
+            Hey, I'm <span class="text-green-500">Prabin Neupane.</span> Here,
+            you can check out what I'm working on. I try my best to create
+            things with &#10084;
+          </div>
+          <!--
+        --></div>
+      </div>
     </div>
 
     <div class="p-4 md:p-20 bg-gray-900 text-gray-50 featured">
-        <div class="sm:w-12/12 animate__animated animate__fadeIn delay2 text-center md:w-12/12 col-centered">
-            <div class="text-4xl w-full md:text-5xl lg:text-6xl pt-10 md:pt-0 font-extrabold">Featured Work</div>
-            <div class="grid grid-cols-12 mt-8">
-
-                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
-                    <!-- <a href = "https://www.animalalliancepledge.org/" target = "_blank" class = "kill-link-style"> -->
-                    <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
-                        <img class="project-picture rounded-t-2xl h-60 w-full animal-demo" style="object-fit: cover;" />
-
-                        </img>
-                        <div
-                            class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-green-300 to-green-400 rounded-b-2xl">
-                            Illusion
-                        </div>
-
-                    </div>
-                    <!-- </a> -->
-
-                </div>
-
-
-                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
-                    <!-- <a href = "https://www.easy-emdr.com/" target = "_blank" class = "kill-link-style"> -->
-                    <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
-                        <img class="project-picture rounded-t-2xl h-60 w-full easy-emdr-demo"
-                            style="object-fit: cover;" />
-
-                        </img>
-                        <div
-                            class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-purple-300 to-purple-400 rounded-b-2xl">
-                            Abstract
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4 " style="position: relative;">
-                    <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
-                        <img class="project-picture rounded-t-2xl h-60 w-full boycott-demo" src="./img//Cat Sama.jpeg"
-                            style="object-fit: cover;" />
-
-                        </img>
-                        <div
-                            class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-blue-300 to-blue-400 rounded-b-2xl">
-                            Character
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-            </div>
-        </div>
-    </div>
-
-    <div id="projects" class="p-4 md:pt-24 pb-26 xl:p-20 bg-gray-50 text-gray-900">
-        <div class="sm:w-12/12 md:w-12/12 col-centered">
-            <div class="p-4 pt-8 text-4xl md:text-6xl font-extrabold">My Projects</div>
-            <div class="p-4 text-2xl md:text-4xl w-10/12 font-extrabold">I love to create things, and I'm always working
-                on something new! You can view some of my favorite projects below.</div>
-
-            <div class="grid grid-cols-12 my_projects">
-
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-                        <div
-                            class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-                            <div class="w-full text-center">
-                                <img src="img/Eye Illusion.jpeg" alt="Boycott Buddy Logo"
-                                    class="col-centered rounded-md mt-2 mb-1 " />
-                            </div>
-                            <div class="mt-2 ">
-                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                                    Boycott Buddy
-                                </span>
-                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                                    Resource</div>
-                            </div>
-
-                        </div>
-                </div>
-
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-                    <div
-                        class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-                        <div class="w-full text-center">
-                            <img src="img/Mermaid.jpeg" alt="Boycott Buddy Logo"
-                                class="col-centered rounded-md mt-2 mb-1 " />
-                        </div>
-                        <div class="mt-2 ">
-                            <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                                Boycott Buddy
-                            </span>
-                            <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                                Resource</div>
-                        </div>
-
-                    </div>
-            </div>
-            <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-                <div
-                    class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-                    <div class="w-full text-center">
-                        <img src="img/Eye_Lips.jpeg" alt="Boycott Buddy Logo"
-                            class="col-centered rounded-md mt-2 mb-1 " />
-                    </div>
-                    <div class="mt-2 ">
-                        <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                            Boycott Buddy
-                        </span>
-                        <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                            Resource</div>
-                    </div>
-
-                </div>
-        </div>
-
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-            <div
-                class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-                <div class="w-full text-center">
-                    <img src="img/Rainbow_Square.jpeg" alt="Boycott Buddy Logo"
-                        class="col-centered rounded-md mt-2 mb-1 " />
-                </div>
-                <div class="mt-2 ">
-                    <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                        Boycott Buddy
-                    </span>
-                    <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                        Resource</div>
-                </div>
-
-            </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+      <div
+        class="sm:w-12/12 animate__animated animate__fadeIn delay2 text-center md:w-12/12 col-centered"
+      >
         <div
-            class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-            <div class="w-full text-center">
-                <img src="img/scroll-line_Illusions.jpeg" alt="Boycott Buddy Logo"
-                    class="col-centered rounded-md mt-2 mb-1 " />
-            </div>
-            <div class="mt-2 ">
-                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                    Boycott Buddy
-                </span>
-                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                    Resource</div>
-            </div>
-
+          class="text-4xl w-full md:text-5xl lg:text-6xl pt-10 md:pt-0 font-extrabold"
+        >
+          Featured Work
         </div>
-</div>
-
-<div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-    <div
-        class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-        <div class="w-full text-center">
-            <img src="img/No_Outline_Face.jpeg" alt="Boycott Buddy Logo"
-                class="col-centered rounded-md mt-2 mb-1 " />
-        </div>
-        <div class="mt-2 ">
-            <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                Boycott Buddy
-            </span>
-            <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                Resource</div>
-        </div>
-
-    </div>
-</div>
-
-
-<div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-    <div
-        class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-        <div class="w-full text-center">
-            <img src="img/Hancock.jpeg" alt="Boycott Buddy Logo"
-                class="col-centered rounded-md mt-2 mb-1 " />
-        </div>
-        <div class="mt-2 ">
-            <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                Boycott Buddy
-            </span>
-            <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                Resource</div>
-        </div>
-
-    </div>
-</div>
-
-<div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
-    <div
-        class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
-
-        <div class="w-full text-center">
-            <img src="img/Faces.jpeg" alt="Boycott Buddy Logo"
-                class="col-centered rounded-md mt-2 mb-1 " />
-        </div>
-        <div class="mt-2 ">
-            <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
-                Boycott Buddy
-            </span>
-            <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Consumer Transparency
-                Resource</div>
-        </div>
-
-    </div>
-</div>
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-    <div id="extras" class="p-4 md:pt-24 pb-26 xl:p-20 bg-gray-900 text-gray-50">
-        <div class="sm:w-12/12 md:w-12/12 col-centered">
-            <div class="p-4 pt-8 text-4xl md:text-6xl font-extrabold">Extras</div>
-            <div class="p-4 text-2xl md:text-4xl w-10/12 font-extrabold">An incomplete list of some videos and writings
-                that I've made, covering a wide variety of topics. Check them out if you like!</div>
-        </div>
-
-        <div class="masonry ">
-
-        </div>
-     
-
-
-         
-
-    </div> 
-    <div class="w-full bg-gray-200 text-center block p-4 footer">
-        <span class="font-extrabold text-gray-900 text-xl">
-            <div class="mt-1">© 2024 Prabin Neupane. All Rights Reserved.</div>
-        </span>
-        <a href="https://www.fb.com/prabinneupane" target="_blank">
+        <div class="grid grid-cols-12 mt-8">
+          <div
+            class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4"
+          >
+            <!-- <a href = "https://www.animalalliancepledge.org/" target = "_blank" class = "kill-link-style"> -->
             <div
-                class="text-xl mt-3 font-extrabold text-gray-50 bg-gray-900 hover:bg-green-500 hover:border-green-500 duration-200 cursor-pointer hover:shadow-md hover:text-gray-900 border-4 p-2 inline-block rounded-md border-gray-900 ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.25"
-                    stroke="currentColor" class="relative -top-0.5 inline-block h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-                </svg>
-                Support my work
+              class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl"
+            >
+              <img
+                class="project-picture rounded-t-2xl h-60 w-full animal-demo"
+                style="object-fit: cover"
+              />
+
+              <div
+                class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-green-300 to-green-400 rounded-b-2xl"
+              >
+                Illusion
+              </div>
             </div>
-        </a>
+            <!-- </a> -->
+          </div>
+
+          <div
+            class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4"
+          >
+            <!-- <a href = "https://www.easy-emdr.com/" target = "_blank" class = "kill-link-style"> -->
+            <div
+              class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl"
+            >
+              <img
+                class="project-picture rounded-t-2xl h-60 w-full easy-emdr-demo"
+                style="object-fit: cover"
+              />
+
+              <div
+                class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-purple-300 to-purple-400 rounded-b-2xl"
+              >
+                Abstract
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4"
+            style="position: relative"
+          >
+            <div
+              class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl"
+            >
+              <img
+                class="project-picture rounded-t-2xl h-60 w-full boycott-demo"
+                src="./img//Cat Sama.jpeg"
+                style="object-fit: cover"
+              />
+
+              <div
+                class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-blue-300 to-blue-400 rounded-b-2xl"
+              >
+                Character
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div
+      id="projects"
+      class="p-4 md:pt-24 pb-26 xl:p-20 bg-gray-50 text-gray-900"
+    >
+      <div class="sm:w-12/12 md:w-12/12 col-centered">
+        <div class="p-4 pt-8 text-4xl md:text-6xl font-extrabold">Featured</div>
+        <div class="p-4 text-2xl md:text-4xl w-10/12 font-extrabold">
+          I love to create things, and I'm always working on something new! You
+          can view some of my favorite projects below.
+        </div>
+
+        <div class="grid grid-cols-12 my_projects">
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Eye Illusion.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Searching
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: color pen, ink pen on paper
+                </div>
+                <p>
+                  Description: The two circles symbolize my inner desire,
+                  thought and emotion, remaining portion displays the confusions
+                  I am tackling and the eyes represents my desire to see through
+                  all those confusion.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Mermaid.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Water maiden
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: graphite pencil, ink pen on paper
+                </div>
+                <p>
+                  Description: During my late teens I was fascinated by mermaid
+                  and their ability to live under, that fascination was
+                  expressed in this art.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Eye_Lips.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Looking lips
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: White pen, charcoal pencil on hard paper
+                </div>
+                <p>
+                  Description: The art above portrays eye of a spearker who
+                  cannot say a word but stare through illusions and confusions
+                  of life.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Rainbow_Square.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Random
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Color pencils on paper
+                </div>
+                <p>
+                  Description: The art is compilations of random thoughts and
+                  emotions that is felt throughout the day, colors represent my
+                  inner emotion and those cranky line describes my random
+                  thoughts.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/scroll-line_Illusions.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Passion
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Marker pen, pen on paper
+                </div>
+                <p>
+                  Description: It represents the bottled passion inside of man
+                  who has a family to take care of. Inspired by watching my
+                  father activities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/No_Outline_Face.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Phase through
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Graphite pencils on paper
+                </div>
+                <p>
+                  Description: Though it looks incomplete, it portrays as
+                  phasing from the harsh and hostile nature of day-to-day life
+                  where the white background symbolizes hope in the darkness.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Hancock.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Boa Hancock
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Graphite pencil, color pencil on paper
+                </div>
+                <p>
+                  Description: This art is simply a drawing of a favorite
+                  character from One piece anime that I loved to watch.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Faces.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Irregular Face
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Graphite pencil on paper
+                </div>
+                <p>
+                  Description: It is the oldest art from my collections, this
+                  shows my love and dedication that I have for arts.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Cat Sama.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Kyden
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Graphite pencil on paper
+                </div>
+                <p>
+                  Description: It is a character from the webtoon Elceed, while
+                  reading the manga I was captivated by this character and was
+                  motivated to draw.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/Abstract.jpeg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Experiment
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Paints, leaf, brush on paper
+                </div>
+                <p>
+                  Description: During the art journey I had played with colors
+                  many times but this was something that captured my teen
+                  characteristics and is one of my favorite. It displays my
+                  randomness nature.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+            <div
+              class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg"
+            >
+              <div class="w-full text-center">
+                <img
+                  src="img/PinkLine.jpg"
+                  alt="Boycott Buddy Logo"
+                  class="col-centered rounded-md mt-2 mb-1"
+                />
+              </div>
+              <div class="mt-2">
+                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">
+                  Tranquility
+                </span>
+                <div class="mt-1 text-gray-900 font-bold text-md lg:text-lg">
+                  Tools: Pink color pen on paper
+                </div>
+                <p>
+                  Description: It has no absolute meaning but the purpose of
+                  this drawing was to calm my ever-thinking mind.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="extras"
+      class="p-4 md:pt-24 pb-26 xl:p-20 bg-gray-900 text-gray-50"
+    >
+      <div class="sm:w-12/12 md:w-12/12 col-centered">
+        <div class="p-4 pt-8 text-4xl md:text-6xl font-extrabold">Extras</div>
+        <div class="p-4 text-2xl md:text-4xl w-10/12 font-extrabold">
+          An incomplete list of some videos and writings that I've made,
+          covering a wide variety of topics. Check them out if you like!
+        </div>
+      </div>
+
+      <div class="masonry"></div>
+      
+    </div>
+    
+    <div class="w-full bg-gray-200 text-center block p-4 footer">
+      <span class="font-extrabold text-gray-900 text-xl">
+        <div class="mt-1">© 2024 Prabin Neupane. All Rights Reserved.</div>
+      </span>
+      <a href="" target="_blank">
+        <div
+          class="text-xl mt-3 font-extrabold text-gray-50 bg-gray-900 hover:bg-green-500 hover:border-green-500 duration-200 cursor-pointer hover:shadow-md hover:text-gray-900 border-4 p-2 inline-block rounded-md border-gray-900"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.25"
+            stroke="currentColor"
+            class="relative -top-0.5 inline-block h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z"
+            />
+          </svg>
+          Support my work
+        </div>
+      </a>
     </div>
     <script>
-        const imgContainer = document.querySelector(".masonry");
+      const imgContainer = document.querySelector(".masonry");
 
-        for (let i = 1; i <= 54; i++) {
-            const img = document.createElement("img");
-            img.src = `./img/Art collection/${i}.jpeg`;
-            img.alt = `Image ${i}`;
-            img.setAttribute("lazyLoading", "true")
-            imgContainer.appendChild(img);
-        }
+      for (let i = 1; i <= 54; i++) {
+        const img = document.createElement("img");
+        img.src = `./img/Art collection/${i}.jpeg`;
+        img.alt = `Image ${i}`;
+        img.setAttribute("lazyLoading", "true");
+        imgContainer.appendChild(img);
+      }
     </script>
-    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
-        integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+      integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/index.js"></script>
-</body>
-
+  </body>
 </html>
