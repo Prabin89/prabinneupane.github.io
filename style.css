@@ -27,7 +27,7 @@ html {
    border: 5px, solid #ccc;
 }
 
-.my_projects img{
+.my_projects img {
    height: 200px;
    width: 100%;
    object-fit: cover;
@@ -206,4 +206,16 @@ a:visited {
    .contact-me-inactive {
       bottom: -500%;
    }
+}
+
+.masonry {
+   display: grid;
+   gap: 10px;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: masonry;
+}
+
+.footer {
+   position: absolute;
+   bottom: 0 !important;
 }
