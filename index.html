@@ -362,7 +362,7 @@
             </div>
          </div>
 
-         <div class="photoGraphyMasonry"></div>
+         <div class="photographyMasonry"></div>
       </div>
 
       <div class="w-full bg-gray-200 text-center block p-4 footer">
@@ -512,10 +512,12 @@
          }
 
          const photoGraphyContainer = document.querySelector(".photographyMasonry");
-         for (let i = 1; i <= 10; i++) {
+
+         for (let i = 1; i <= 13; i++) {
             const link = document.createElement("a");
             link.href = `./img/Photography/${i}.jpeg`;
             link.target = "_blank";
+
             const img = document.createElement("img");
             img.src = `./img/Photography/${i}.jpeg`;
             img.alt = `Image ${i}`;
