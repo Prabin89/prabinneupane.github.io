@@ -2,7 +2,7 @@ html {
    scroll-behavior: smooth !important;
 }
 
-.featured img:hover {
+/* .featured img:hover {
    transform: scale(2);
    z-index: 99999999999999999999999999999999999999999;
    max-height: 90vh;
@@ -11,9 +11,9 @@ html {
    left: 0 !important;
    object-fit: contain !important;
    border: 5px, solid #ccc;
-}
+ } */
 
-.my_projects img:hover {
+/* .my_projects img:hover {
    transform: scale(2);
    z-index: 99999999999999999999999999999999999999999;
    height: auto;
@@ -25,10 +25,10 @@ html {
    right: 0 !important;
    object-fit: contain !important;
    border: 5px, solid #ccc;
-}
+} */
 
 .my_projects img {
-   height: 200px;
+   height: 300px;
    width: 100%;
    object-fit: cover;
 }
